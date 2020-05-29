@@ -38,9 +38,6 @@ This is a zip file that you'll need to extract in the home directory of this not
 ```python
 data_dir = 'processed_celeba_small/'
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
 import pickle as pkl
 import matplotlib.pyplot as plt
 import numpy as np
@@ -110,9 +107,6 @@ Call the above function and create a dataloader to view images.
 batch_size = 128
 img_size = 32
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 # Call your function and get a dataloader
 celeba_train_loader = get_dataloader(batch_size, img_size)
 ```
@@ -138,9 +132,6 @@ def imshow(img):
     npimg = img.numpy()
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 # obtain one batch of training images
 dataiter = iter(celeba_train_loader)
 images, _ = dataiter.next() # _ for no labels
@@ -154,7 +145,7 @@ for idx in np.arange(plot_size):
 ```
 
 
-![png](output_9_0.png)
+![png](assets/output_9_0.png)
 
 
 #### Exercise: Pre-process your image data and scale it to a pixel range of -1 to 1
@@ -178,9 +169,6 @@ def scale(x, feature_range=(-1, 1)):
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 # check scaled range
 # should be close to -1 to 1
 img = images[0]
@@ -268,9 +256,6 @@ class Discriminator(nn.Module):
         return out
 
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 tests.test_discriminator(Discriminator)
 ```
 
@@ -336,9 +321,7 @@ class Generator(nn.Module):
         
         return out
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
+
 tests.test_generator(Generator)
 ```
 
@@ -386,9 +369,6 @@ Define your models' hyperparameters and instantiate the discriminator and genera
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 def build_network(d_conv_dim, g_conv_dim, z_size):
     # define discriminator and generator
     D = Discriminator(d_conv_dim)
@@ -415,9 +395,6 @@ d_conv_dim = 64
 g_conv_dim = 64
 z_size = 100
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
-"""
 D, G = build_network(d_conv_dim, g_conv_dim, z_size)
 ```
 
@@ -471,9 +448,7 @@ Are moved to GPU, where appropriate.
 
 
 ```python
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
+
 import torch
 
 # Check for a GPU
@@ -699,9 +674,7 @@ Set your number of training epochs and train your GAN!
 # set number of epochs 
 n_epochs = 20
 
-"""
-DON'T MODIFY ANYTHING IN THIS CELL
-"""
+
 # call training function
 with active_session():
     losses = train(D, G, n_epochs=n_epochs)
@@ -1051,7 +1024,7 @@ plt.legend()
 
 
 
-![png](output_40_1.png)
+![png](assets/output_40_1.png)
 
 
 ## Generator samples from training
@@ -1085,7 +1058,7 @@ view_samples(-1, samples)
 ```
 
 
-![png](output_44_0.png)
+![png](assets/output_44_0.png)
 
 
 ### Question: What do you notice about your generated samples and how might you improve this model?
