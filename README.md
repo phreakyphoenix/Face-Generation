@@ -4,9 +4,9 @@
 In this project, you'll define and train a DCGAN on a dataset of faces. Your goal is to get a generator network to generate *new* images of faces that look as realistic as possible! 
 
 To check out the Project, use any of these links:
-1. [Markdown](https://github.com/phreakyphoenix/Face-generAtion/tree/master/README.md) 
-2. [IPYNB](https://github.com/phreakyphoenix/Face-generAtion/blob/master/dlnd_face_generation.ipynb)
-3. [HTML](https://github.com/phreakyphoenix/Face-generAtion/blob/master/dlnd_face_generation.html)  
+1. [Markdown](https://github.com/phreakyphoenix/Face-generation/tree/master/README.md) 
+2. [IPYNB](https://github.com/phreakyphoenix/Face-generation/blob/master/dlnd_face_generation.ipynb)
+3. [HTML](https://github.com/phreakyphoenix/Face-generation/blob/master/dlnd_face_generation.html)  
 
 >**g.pt and d.pt are the trained generator and discriminator files**
 
